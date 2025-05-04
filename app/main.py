@@ -16,13 +16,13 @@ async def home():
 # Hakkımızda Sayfası
 @app.get("/hakkimizda", response_class=HTMLResponse)
 async def hakkimizda():
-    with open("frontend/hakkimizda.html", "r", encoding="utf-8") as file:
+    with open("frontend/hakkımızda.html", "r", encoding="utf-8") as file:
         return HTMLResponse(content=file.read())
 
 # İletişim Sayfası
 @app.get("/iletisim", response_class=HTMLResponse)
 async def iletisim():
-    with open("frontend/iletisim.html", "r", encoding="utf-8") as file:
+    with open("frontend/iletişim.html", "r", encoding="utf-8") as file:
         return HTMLResponse(content=file.read())
 
 # Kaydol Sayfası
@@ -40,5 +40,5 @@ async def ucretlendirme():
 # Giriş Sayfası
 @app.get("/giris", response_class=HTMLResponse)
 async def giris():
-    with open("frontend/giris.html", "r", encoding="utf-8") as file:
+    with open("frontend/giriş.html", "r", encoding="utf-8") as file:
         return HTMLResponse(content=file.read())
