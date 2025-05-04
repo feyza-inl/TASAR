@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaydol | TASAR</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #d4ecff, #e9e4ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .register-box {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+    .register-box h2 {
+      margin-bottom: 20px;
+      color: #4f3fcf;
+    }
+    .register-box input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .register-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4f3fcf;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .register-box button:hover {
+      background-color: #372fa1;
+    }
+    .success {
+      display: none;
+      margin-top: 20px;
+      font-size: 16px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-box">
+    <h2>Kaydol</h2>
+    <form id="registerForm" onsubmit="return handleRegister(event)">
+      <input type="text" id="fullname" placeholder="Ad Soyad" required>
+      <input type="email" id="email" placeholder="E-posta" required>
+      <input type="text" id="username" placeholder="Kullanıcı Adı" required>
+      <input type="tel" id="phone" placeholder="Telefon Numarası" pattern="[0-9]{10,11}" required>
+      <input type="text" id="school" placeholder="Okul / Kurum" required>
+      <select id="userType" required>
+        <option value="">Kullanıcı Türü Seçin</option>
+        <option value="ogrenci">Öğrenci</option>
+        <option value="ogretmen">Öğretmen</option>
+        <option value="kurum">Eğitim Kurumu</option>
+      </select>
+      <input type="password" id="password" placeholder="Şifre" required>
+      <input type="password" id="confirmPassword" placeholder="Şifre (Tekrar)" required>
+      <button type="submit">Kaydol</button>
+    </form>
+    <div class="success" id="successMsg">Kayıt başarılı! Giriş ekranına yönlendiriliyorsunuz...</div>
+  </div>
+
+  <script>
+    function handleRegister(event) {
+      event.preventDefault();
+
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        alert("Şifreler eşleşmiyor!");
+        return false;
+      }
+
+      // Tüm alanlar doluysa kayıt başarılı
+      document.getElementById("registerForm").reset();
+      document.getElementById("successMsg").style.display = "block";
+
+      setTimeout(() => {
+        window.location.href = "giris.html";
+      }, 2500);
+
+      return false;
+    }
+  </script>
+</body>
+</html>

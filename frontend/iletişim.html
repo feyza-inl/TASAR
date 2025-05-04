@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim | TASAR</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #4f3fcf, #8e7bff);
+      color: white;
+      padding: 20px 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #4f3fcf;
+      margin-top: 40px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea {
+      margin-bottom: 20px;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #4f3fcf;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #372fa1;
+    }
+    .success-message {
+      color: green;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>TASAR</h2>
+  </header>
+
+  <h1>İletişim</h1>
+  <div class="container">
+    <p style="text-align:center">Her türlü görüş, öneri ve iş birliği için bize aşağıdaki formdan ulaşabilirsiniz.</p>
+    <form id="contactForm" onsubmit="return handleSubmit(event)">
+      <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
+      <input type="email" id="email" name="email" placeholder="E-posta Adresiniz" required>
+      <textarea id="message" name="message" rows="5" placeholder="Mesajınız" required></textarea>
+      <button type="submit">Gönder</button>
+    </form>
+    <p class="success-message" id="successMessage">Mesajınız başarıyla gönderildi. Teşekkür ederiz!</p>
+  </div>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      document.getElementById("contactForm").reset();
+      document.getElementById("successMessage").style.display = "block";
+      return false;
+    }
+  </script>
+</body>
+</html>

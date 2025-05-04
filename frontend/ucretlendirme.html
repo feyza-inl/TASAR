@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ücretlendirme | TASAR</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9ff;
+    }
+    header {
+      background: linear-gradient(90deg, #4f3fcf, #8e7bff);
+      color: white;
+      padding: 20px 40px;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #4f3fcf;
+      margin-top: 40px;
+    }
+    .pricing-container, .plan-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px;
+    }
+    .card, .plan-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 30px;
+      width: 300px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .card h2, .plan-card h3 {
+      color: #4f3fcf;
+    }
+    .price {
+      font-size: 24px;
+      margin: 10px 0;
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      color: #555;
+    }
+    ul li {
+      margin: 10px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4f3fcf;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #372fa1;
+    }
+    .form-group {
+      margin: 15px 0;
+      text-align: left;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <header><h2>TASAR</h2></header>
+  <h1>Ücretlendirme</h1>
+
+  <!-- Fiyat Kartları -->
+  <div class="pricing-container">
+    <div class="card">
+      <h2>Temel Plan</h2>
+      <p class="price">Ücretsiz</p>
+      <ul>
+        <li>Sınırlı içerik erişimi</li>
+        <li>Haftalık 3 quiz hakkı</li>
+        <li>Genel analiz raporları</li>
+      </ul>
+      <a class="btn" href="#temel">Devam Et</a>
+    </div>
+
+    <div class="card" style="border: 2px solid #4f3fcf;">
+      <h2>Premium Plan</h2>
+      <p class="price">₺49 / ay</p>
+      <ul>
+        <li>Sınırsız içerik ve quiz</li>
+        <li>Kişisel gelişim takibi</li>
+        <li>Öğretmen destekli yönlendirme</li>
+        <li>Detaylı öğrenci analizleri</li>
+      </ul>
+      <a class="btn" href="#premium">Devam Et</a>
+    </div>
+
+    <div class="card">
+      <h2>Kurumsal Plan</h2>
+      <p class="price">Kurumlara Özel</p>
+      <ul>
+        <li>Öğrenci takibi panelleri</li>
+        <li>Kurum içi yönetici yetkileri</li>
+        <li>Özel entegrasyon destekleri</li>
+        <li>Veri güvenliği garantisi</li>
+      </ul>
+      <a class="btn" href="#kurumsal">Devam Et</a>
+    </div>
+  </div>
+
+  <!-- Temel Plan Sayfası -->
+  <section id="temel">
+    <h2>Temel Plan Kaydı</h2>
+    <div class="plan-card">
+      <h3>Temel Plan - Ücretsiz</h3>
+      <p>Bu planı seçtiğinizde doğrudan hesabınız etkinleştirilir.</p>
+      <form onsubmit="alert('Temel Plan aktif edildi!'); return false;">
+        <div class="form-group">
+          <label>Ad Soyad</label>
+          <input type="text" required>
+        </div>
+        <div class="form-group">
+          <label>E-posta</label>
+          <input type="email" required>
+        </div>
+        <button class="btn" type="submit">Kaydı Tamamla</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Premium Plan Sayfası -->
+  <section id="premium">
+    <h2>Premium Plan Ödeme</h2>
+    <div class="plan-card">
+      <h3>Premium Plan - ₺49 / ay</h3>
+      <form onsubmit="alert('Premium abonelik başarıyla satın alındı!'); return false;">
+        <div class="form-group">
+          <label>Kart Üzerindeki İsim</label>
+          <input type="text" required>
+        </div>
+        <div class="form-group">
+          <label>Kart Numarası</label>
+          <input type="text" maxlength="16" required>
+        </div>
+        <div class="form-group">
+          <label>Son Kullanma Tarihi</label>
+          <input type="text" placeholder="AA/YY" required>
+        </div>
+        <div class="form-group">
+          <label>CVV</label>
+          <input type="text" maxlength="3" required>
+        </div>
+        <button class="btn" type="submit">Ödemeyi Tamamla</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Kurumsal Plan Sayfası -->
+  <section id="kurumsal">
+    <h2>Kurumsal Plan Talebi</h2>
+    <div class="plan-card">
+      <h3>Kurumsal Plan - Fiyatlandırma İçin İletişim</h3>
+      <p>Size özel teklif ve entegrasyon süreci için aşağıdaki bilgileri doldurun, sizi arayalım.</p>
+      <form onsubmit="alert('Kurumsal başvuru gönderildi. En kısa sürede sizinle iletişime geçeceğiz.'); return false;">
+        <div class="form-group">
+          <label>Kurum Adı</label>
+          <input type="text" required>
+        </div>
+        <div class="form-group">
+          <label>Yetkili Kişi</label>
+          <input type="text" required>
+        </div>
+        <div class="form-group">
+          <label>İletişim E-postası</label>
+          <input type="email" required>
+        </div>
+        <div class="form-group">
+          <label>Telefon</label>
+          <input type="text" required>
+        </div>
+        <button class="btn" type="submit">Başvur</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
